@@ -1,92 +1,13 @@
 <html>
 <head>
 	<title>rainerkern.at</title>
+	<link rel="stylesheet" href="style.css" /> 
 	<link rel="icon" href="img/rainerkern-icon-32x32" sizes="32x32.png" />
 	<link rel="icon" href="img/rainerkern-icon-192x192" sizes="192x192.png" />
 	<link rel="apple-touch-icon-precomposed" href="img/rainerkern-icon-180x180.png" />
 	<meta name="msapplication-TileImage" content="img/rainerkern-icon-270x270.png" />
 </head>
 <style type="text/css">
-	body {
-		background-color: #e5e5e5;
-		color: #555;
-		font-size: 15px;
-		font-family: Arial,Helvetica,sans-serif;
-    	word-wrap: break-word;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-	    margin-top: .75em;
-	    margin-bottom: .75em;
-	}
-
-	h1 {
-		font-size: 2.25em;
-		margin:5vh 2vw 1vh 2vw;
-		text-align: center;
-	}
-
-	h2 {}
-
-	h3 {font-size: 1.875em;}
-
-	p {
-		margin:0 2vw 0 2vw;
-	}
-
-	a {
-	    color: #06c;
-    	font-weight: 400;
-    	text-decoration: none;
-	}
-
-	#content {
-		background-color: #ffffff;
-	    border: 1px solid #e5e5e5;
-		border-radius: 5px;
-	    margin: 20px auto;
-	    max-width: 740px;
-	    padding: 5vh 3vw 30px 3vw;
-	    -webkit-border-radius: 5px;
-	    -moz-border-radius: 5px;
-	}
-
-	hr.spacer {
-		background: none;
-		border: none;
-		color: #ffffff;
-		text-align: center;
-		margin: 20px auto 10px auto;
-	}
-	hr.spacer:after {
-		text-align: center;
-		color: #555555;
-		content:". . .";
-		font-size: 20px;
-		letter-spacing: 20px;
-	}
-
-	.column-layout {
-    	display: flex;
-    	flex-wrap: wrap;
-	}
-
-	.column-layout div {
-		display: flex;
-  		flex-direction: column;
-  		flex-basis: 100%;
-		flex-grow : 1;    /* this means that the div will grow in same proportion as the window-size   */
-		flex-shrink : 1;  /* this means that the div will shrink in same proportion as the window-size */
-		flex-basis : 0;   /* this means that the div does not have a starting value as such and will take up screen as per the screen size available for.e.g:- if 3 divs are in the wrapper then each div will take 33%. */
-	    max-width: 500px;
-	    padding-left: 15px;
-	    padding-right: 15px;
-	}
-</style>
-<style type="text/css">
-/* 
- * Layout for spcific elements
- */
 	img#rainerkern-logo {
 		width: 100%;
 	}
@@ -99,16 +20,98 @@
 	    -moz-border-radius: 5px;
 	}
 
-	#three-columns div {
+	#three-columns > div {
 		max-width: 250px;
 	}
 
-	#three-columns div h3{
+	#three-columns > div > h3{
 		min-width: 180px;
 	}
 
-	#three-columns div img {
+	#three-columns > div > img {
 		width: 100%;
+	}
+</style>
+<style>
+/* Modal Wiondows */
+	details.modal summary {
+		background: white;
+		border: 2px solid #215990;
+		border-radius: 4px;
+		color: #215990;
+		cursor: pointer;
+		display: inline-block;
+		font-family: Arial;
+		font-weight: bold;
+		font-size: 1.2em;
+		letter-spacing: 0.025em;
+		outline: none !important;
+		padding: 8px 12px;
+		padding-top: 10px;
+		overflow: hidden;
+		text-transform: uppercase;
+	}
+
+	details.modal summary:hover {
+		background: #215990;
+		border: 2px solid #215990;
+		border-radius: 4px;
+		color: white;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: bold;
+		font-size: 1.2em;
+		letter-spacing: 0.025em;
+		outline: none !important;
+		padding: 8px 12px;
+		padding-top: 10px;
+		overflow: hidden;
+		text-transform: uppercase;
+	}
+
+	details.modal[open] > summary::before {
+		background: rgba(27,31,35,0.5);
+		content: " ";
+		cursor: default;
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 99;
+	}
+
+	details.modal > div {
+		animation-name: fadein;
+		animation-duration: 300ms;
+		animation-timing-function: ease-in-out;
+		background-color: #fff;
+		border: 1px solid #215990;
+		border-radius: 3px;
+		border-top: 5px solid #215990;
+		box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+		font-size: 2em;
+		font-weight: bold;
+		left: 50%;
+		padding: 1em;
+		margin: 10vh auto;
+		max-height: 80vh;
+		max-width: 90vw;
+		position: fixed;
+		top: 0;
+		transform: translateX(-50%);
+		width: 448px;
+		z-index: 999;
+	}
+
+	@keyframes fadein {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
+
+	details.modal summary::-webkit-details-marker {
+	display:none;
 	}
 </style>
 <body>
@@ -124,6 +127,28 @@
 					<br/><br/>
 					Apart from my work as a software architecture consultant and engineer in my role as CEO of Systemkern, I am is also engaged as a lector at the SAE University in Vienna and Co-Organiser of the Vienna Kotlin Meetup, Author of a number of software engineering classes and several software engineering related talks as well as contributor to two Kotlin libraries on Github.
 				</p>
+				<center><br/><br/>
+					<details class="modal">
+						<summary>Contact Me</summary>
+						<div id=footer>
+							<form action="https://www.getdrip.com/forms/554190535/submissions" method="post" data-drip-embedded-form="554190535">
+								<h3 data-drip-attribute="headline">Contact Me</h3>
+							 	<div data-drip-attribute="description"></div>
+							   	<div>
+							    	<label for="drip-email">Email Address</label><br/>
+									<input type="email" id="drip-email" name="fields[email]" value="" />
+							    </div>
+							 	<div style="display: none;" aria-hidden="true">
+							  		<label for="website">Website</label><br/>
+							   		<input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="" />
+							  	</div>
+							  	<div>
+							    	<input type="submit" value="Sign Up" data-drip-attribute="sign-up-button" />
+							  	</div>
+							</form>
+						</div>
+					</details>
+				</center>
 			</div>
 			<div>
 				<img src="img/rainerkern-photo.jpeg" id="rainerkern-photo">
@@ -149,22 +174,25 @@
 			<div>
 				<h3>Free Stuff</h3>
 				<img src="img/checklist.jpg">
-				<br />
+				<br/>
 				<a href="https://docs.google.com/document/d/1Q_RlPPZs5cEHuOT0yoqtKb-fGOYAqHQojmOeuGIBIgw/edit?usp=sharing" target="blank">Pull Request Review – SOP</a>
-				<br /><br />
+				<br/><br/>
 				<a href="https://github.com/systemkern/contribution-guidelines/blob/master/CONTRIBUTE.md" target="blank">Contribution Guidelines</a>
-				<br /><br />
+				<br/><br/>
 				<a href="http://www.rainerkern.at/software-delivery-evaluation" target="blank">Software Delivery Performance Calculator</a> - early Alpha Version
 			</div>
 			<div>
 				<h3>Kotlin Vienna</h3>
 				<img src="img/kotlin-vienna.jpeg">
-				<br />
+				<br/>
 				The Vienna Kotlin Meetup takes place every last Tuesday of every odd month (Jan, Mar, May, Jul, Sept, Nov)
-				<br /><br />
+				<br/><br/>
 				Find the Schedule at <a href="kotlin.wien" target="blank">kotlin.wien</a>
 			</div>
 		</div>
+	</div>
+	<div id="footer">
+		Footer Content Goes Here
 	</div>
 </body>
 </html>
