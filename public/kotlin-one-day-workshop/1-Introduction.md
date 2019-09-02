@@ -1,14 +1,89 @@
+# One-Day Workshop: Introduction to Kotlin
+
+The One-Day Workshop: Introduction to Kotlin is aimed at developers who want to dip their toes into the waters of Kotlin programming. The course is suitable for almost all skill levels. It is helpful - tough not necessary - if you are able to answer the following questions:
+
+What is Java?
+
+- A Coffee Brand
+- An Island
+- A Programming Language
+
+Have you ever used IntelliJ?
+
+* Yes, a lot
+* Yes a little
+* No
+
+What is the difference between Git Push and Commit?
+
+What is the difference between Git Pull and Fetch?
+
+What is the name of the main Maven Configuration file?
+
+What is the name of the main Gradle configuration file?
+
+Which statements are generally named “control-flow” statements?
+
+* If, Else, Case
+* Class, Void, String
+* For, While, Until
+* Print, Println, Log
+* Return, Continue, Break
+* Try, Catch, Throw
+* Public, Protected, Private
+
+What is the difference between a variable and a data type?
+
+How do you repeat the execution of a statement or block of statements?
+
+What is it called when a function “walks” through a collection?
+
+What is overloading?
+
+* Multiple classes inheriting from the same parent
+* Multiple functions with the same name
+* When a function returns more than one value
+
+What is the difference between a parameter and an argument?
+
+What is TDD?
+
+What is BDD?
+
+What does Inheritance mean?
+
+What is Spring?
+
+What is Hibernate?
+
+What is JUnit?
+
+
+
+## Workshop Agenda
+
+1. Setup Development Environments
+
+   [introduction document](1-introduction.md)
+
+2. Create a Hello World application
+
+3. [kotlin-ktor-client-server github repository](https://github.com/rainerkern/kotlin-ktor-client-server)
+   [kotlin-ktor-client-server-log](kotlin-ktor-server.md)
+
+   - Create a small web server
+   - Deliver dynamic pages from our webserver
+   - Introduce Kotlin Serialization
+
+4. [Advanced World](https://docs.google.com/document/d/1LzRb3Ex7JdlYf_9tQF_Ovq4UYk9RKU31PLN0zqmvXkI/edit#heading=h.2dv6awdmc6n7) Exercises 1 - 3
+
+5. [Ktor Get Client](https://docs.google.com/document/d/1E_MxduZGCfFTUXjwWktjgxY2WaiwDoUm2pdALzYJFSM/edit#) Authentication token
+
+
+
 # Preparation and Introduction
 
-Welcome to our first class of this course start programming using Kotlin. We'll introduce you to Kotlin concepts, help you set up your development environment, and create your first Hello World program.
-We recommend doing this lesson by reading the topics, watching the video series and finally practising the exercises.
-Feel free to ask any questions via email.
-Cheers and happy coding,
-Rainer
-
-
-
-## What is Kotlin, Java, JVM?
+What is Kotlin, Java, JVM?
 
 Kotlin is a relatively young programming language. For execution, Kotlin needs a runtime library called the Java Virtual Machine (JVM). Kotlin is fully interoperable in both directions with the much older Java programming language (Java also needs the JVM to run). This means that Kotlin can make use of all the very mature and useful libraries and tools of the Java ecosystem. Also, Java applications can use classes and libraries developed in Kotlin.So to fully use Kotlin you must also learn at least a little bit about the Java ecosystem.
 
