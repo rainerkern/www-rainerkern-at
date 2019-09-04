@@ -1,12 +1,14 @@
 pages:
-  image: alpine:latest
+  image: registry.gitlab.com/systemkern/s5:latest 
   stage: deploy
   script:
     - ls -al
-#    - rm -rf public
-#    - mkdir public
-#    - cp -r *.* img public
     - ls -al public
+    - lftp -u $FTP_USER,$FTP_PASS $SERVER:$PORT '
+      set net:timeout 5;
+      set net:max-retries 1;
+      mirror -R public .
+      '
   artifacts:
     paths:
     - public
