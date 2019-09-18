@@ -13,8 +13,8 @@ pages:
   artifacts:
     paths:
       - public
-#  except:
-#    - master
+  except:
+    - master
 
 deploy:
   stage: deploy
