@@ -22,6 +22,7 @@ deploy:
       set net:timeout 5;
       set net:max-retries 1;
       mirror -R public .
+      exit
       '
   only:
     - master
