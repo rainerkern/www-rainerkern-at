@@ -1,28 +1,12 @@
-image: registry.gitlab.com/systemkern/s5:latest
-
-stages:
-  - build
-  - deploy
+image: alpine
 
 pages:
   stage: build
   script:
-    - cd public
-    - s5
-    - ls -al
+    - ls -al public
     - echo "Deploying to gitlab pages rainerkern.gitlab.io/www-rainerkern-at"
   artifacts:
     paths:
       - public
-
-deploy:
-  stage: deploy
-  script:
-    - lftp -u $FTP_USER,$FTP_PASS $SERVER:$PORT '
-      set net:timeout 5;
-      set net:max-retries 1;
-      mirror -R public .
-      exit
-      '
   only:
     - master
